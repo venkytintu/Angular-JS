@@ -1,0 +1,29 @@
+<html>
+   
+   <head>
+      <title>AngularJS Directives</title>
+   </head>
+   
+   <body>
+      <h1>Sample Application</h1>
+      <!--ng-app starts the angular js application-->
+      <div ng-app = "" ng-init = "countries = [{locale:'en-US',name:'United States'}, {locale:'en-GB',name:'United Kingdom'}, {locale:'en-FR',name:'France'}]"> 
+        <!--ng-init is used to store values -->  
+        <!--here we are using the JSON array collection format-->
+         <p>Enter your Name: <input type = "text" ng-model = "name"></p>
+         <!--ng-model is used to bind the value to use with html-->
+         <p>Hello <span ng-bind = "name"></span>!</p>
+         <p>List of Countries with locale:</p>
+      
+         <ol>
+             <!--repeats the html elements for each item in the collection-->
+            <li ng-repeat = "country in countries">
+               {{ 'Country: ' + country.name + ', Locale: ' + country.locale }}
+            </li>
+         </ol>
+      </div>
+      
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+      
+   </body>
+</html>
